@@ -1,0 +1,411 @@
+{
+"nodes": 
+	[
+		{
+			"synonyms":
+			[
+				"Alcove", "Middle",  "Center"
+			],
+
+			"arrivalLines": 
+			[
+				{"lineString": "Left, right.", 
+				"commands": []},
+				
+				{"lineString": "Up and around.", 
+				"commands": []},
+				
+				{"lineString": "You toss the rags of your makeshift bed like you're making a salad.", 
+				"commands": []},
+				
+				{"lineString": "Not that it helps. There's no magic angle that'll make the stonework below any kinder on your bones.", 
+				"commands": []},
+				
+				{"lineString": "But it's something to do. The guards outside have responded to none of your taunts and staring at the sky got old just a week into your sentence.", 
+				"commands": []},
+				
+				{"lineString": "There's a <color=#00ffffff>stick</color> in the cell, I guess? Maybe you could poke a guard next time they drop by to throw food at you.", 
+				"commands": []},
+
+				{"lineString": "<b>CLINK CLACLINK</b>", 
+				"commands": ["fadeIn"]},
+				
+				{"lineString": "Wait. That's new. What was that sound?", 
+				"commands": []},
+				
+				{"lineString": "You're fairly sure it came from your <color=#00ffffff>right</color>.", 
+				"commands": []}
+			],
+
+			"visitedLines": 
+			[
+				{"lineString": "You return to the middle of your cell and face an alcove shrouded in shadow. The darkened corner of the <color=#00ffffff>wall</color> kind of creeps you out.", 
+				"commands": []}
+			]
+		},
+		
+		{
+			"synonyms":
+			[
+				"Window", "Bars"
+			],
+			
+			"arrivalLines":
+			[
+				{"lineString": "You squint at the light, only barely making out a silhouette dissappearing from view.", 
+				"commands": ["strangerAnimation"]},
+				
+				{"lineString": "Until now you never even realized just how much the solitude got to you but the prospect of finally, actually <b>talking</b> to someone gives you a literal adrenaline rush.", 
+				"commands": []},
+				
+				{"lineString": "You take a deep breath in and...", 
+				"commands": ["giveDialogueChoice windowChoice"]}
+				
+			],
+			
+			"visitedLines":
+			[
+				{"lineString": "You keep eyeing the window. It makes little sense but you wish your mysterious helper would come back to talk to you...", 
+				"commands": []}
+			]
+		},
+		
+		{
+			"synonyms":
+			[
+				"Door", "Entrance", "Gate"
+			],
+			
+			"arrivalLines":
+			[
+				{"lineString": "You turn to face the big slab of metal keeping you locked in. If nothing else they left the window open.", 
+				"commands": []},
+				
+				{"lineString": "The soft glow of the torches peeks through the hatch and paints the walls arround it in red. It's the only warm part of this cell.", 
+				"commands": []},
+				
+				{"lineString": " If you wanted to, you could put your hands through the bars and warm your hands on a torch. Luckily you haven't felt the need for that yet.", 
+				"commands": []},
+				
+				
+				{"lineString": "You wince at the thought of having to spend winter here. Would your jailer just let you rot from frostbite...?", 
+				"commands": []},
+				
+				{"lineString": "Best not to think about that.", 
+				"commands": []}
+			],
+			
+			"visitedLines":
+			[
+				{"lineString": "The soft glow of the torch peeks through the hatch and illuminates the exit. If only you could actually use it...", 
+				"commands": []}
+			]
+		},
+		
+		{
+			"synonyms":
+			[
+				"Exit", "Hole", "Secret passage", "Passage"
+			],
+			
+			"arrivalLines":
+			[
+				{"lineString": "There is no hesitation in your gait. Whatever's in front of you can't be any worse than wasting away in a cell.", 
+				"commands": []},
+
+				{"lineString": "Are you nervous? Yes. But you hold on tight to your torch and hope it'll last for however long this passage is.", 
+				"commands": []},
+
+				{"lineString": "Actually, scratch that. You know it will. You will make it out of this place.", 
+				"commands": []},
+				
+				{"lineString": "Step by step, you make your way down into the darkness...", 
+				"commands": ["fadeOut"]},
+
+				{"lineString": ".....", 
+				"commands": []},
+
+				{"lineString": "..", 
+				"commands": []},
+				
+				{"lineString": "And that's that!",
+				"commands": []},
+				
+				{"lineString": "This is less a game/demo for a larger thing and more me just experimenting with json and adventure game stuff.",
+				"commands": []},
+				
+				{"lineString": "So thanks for sticking around until the end! C:",
+				"commands": []},
+
+				{"lineString": "\nNow, choose one of the options below to exit or restart the scene:",
+				"commands": ["giveDialogueChoice exitChoice"]}
+			],
+			
+			"visitedLines":
+			[
+				{"lineString": "", 
+				"commands": []}
+			]
+		}
+	],
+
+"interactables": 
+	[
+		{
+			"synonyms":
+			[
+				"Wall", "Bricks"
+			],
+
+			"commandKeys":
+			[
+				"Examine", "Look", "Observe", "Inspect"
+			],
+			
+			"commandValues": [0, 0, 0, 0],
+			"answerKeys": [0],
+
+			"answerValues":
+			[
+				{"lineString": "You tried sleeping there once thinking the little indent would keep you safe from the wind but it was surprisingly drafty.", 
+				"commands": []}
+			]
+		},
+
+		{
+			"synonyms":
+			[
+				"Stick", "Branch", "Wood"
+			],
+
+			"commandKeys":
+			[
+				"Examine", "Look", "Observe", "Inspect", 
+				"Take", "Pick up", "Grab", 
+				"Use"
+			],
+			
+			"commandValues": [0, 0, 0, 0, 1, 1, 1, 2],
+			"answerKeys": [0, 1, 2],
+
+			"answerValues":
+			[
+				{"lineString": "It's a stick. Duh.", 
+				"commands": []},
+
+				{"lineString": "", 
+				"commands": ["addToInventory Stick"]},
+
+				{"lineString": "",  
+				"commands": ["handleStickUse"]}
+			]
+		},
+
+		{
+			"synonyms":
+			[
+				"Door", "Gate", "Hatch"
+			],
+
+			"commandKeys":
+			[
+				"Examine", "Look", "Observe", "Inspect"
+			],
+			
+			"commandValues": [0, 0, 0, 0],
+			"answerKeys": [0],
+
+			"answerValues":
+			[
+				{"lineString": "Rock solid, you're not getting out this way. Surprisingly warm to the touch though...", 
+				"commands": []}
+			]
+		},
+
+		{
+			"synonyms":
+			[
+				"Torch", "Fire"
+			],
+
+			"commandKeys":
+			[
+				"Examine", "Look", "Observe", "Inspect"
+			],
+			
+			"commandValues": [0, 0, 0, 0],
+
+			"answerKeys": [0],
+
+			"answerValues":
+			[
+				{"lineString": "It's a torch. Duh.", "commands": []}
+			]
+		},
+
+		{
+			"synonyms":
+			[
+				"Key", "Shiny"
+			],
+			
+			"commandKeys":
+			[
+				"Examine", "Look", "Observe", "Inspect", 
+				"Take", "Pick up", "Grab", 
+				"Use"
+			],
+			
+			"commandValues": [0, 0, 0, 0, 1, 1, 1, 2],
+			
+			"answerKeys": [0, 1, 2],
+			
+			"answerValues":
+			[
+				{"lineString": "A strange <color=#00ffffff>key</color>. There has to be some <color=#00ffffff>use</color> for it.", 
+				"commands": []},
+
+				{"lineString": "Is? This a key? It sure doesn't <b>look</b> like one but what else could it do. Would make for a very poor fork. Anyways, it has to have some kind of <color=#00ffffff>use</color>...", 
+				"commands": ["addToInventory Key"]},
+
+				{"lineString": "",  
+				"commands": ["handleKeyUse"]}
+			]
+		}
+	],
+	
+"choices":
+	[
+		{
+			"choiceId": "windowChoice",
+			
+			"choiceOption1": "Hello? Who are you??",
+			
+			"choiceOption2": "...",
+			
+			"choiceOption3": null,
+			
+			
+			"choiceResult1":
+			[
+				{"lineString": "You couldn't help yourself. The moment those words leave your lips you bring a hand to your mouth.", 
+				"commands": []},
+				
+				{"lineString": "Idiot! You're in prison and someone just dropped you something and you just go yell about it to everyone in ear shot?!", 
+				"commands": []},
+
+				{"lineString": "Your cheeks go flush in embarassment as you shake your head.", 
+				"commands": []},
+
+				{"lineString": "You tilt your head and listen, waiting for the guards to barge in but... They never come. Odd.", 
+				"commands": []},
+
+				{"lineString": "After taking a moment to cool down, you make a mental note to apologize to whoever that was then turn to look at what they left behind.", 
+				"commands": []},
+
+				{"lineString": "The bars are still intact but... What's that on the ground?", 
+				"commands": []},
+				
+				{"lineString": "Shiny and metal. Your eyes widen in anticipation. A <color=#00ffffff>key</color>, hopefully?", 
+				"commands": []}
+			],
+			
+			"choiceResult2":
+			[
+				
+				{"lineString": "And exhale.", 
+				"commands": []},
+
+				{"lineString": "You're in prison, buddy. If you were sneaking around cells and doing shady shit, the last thing you'd want is for the person you're helping to alert all the guards about it.", 
+				"commands": []},
+				
+				{"lineString": "So yeah, good thinking on your part. You give yourself a mental pat on the back and look around to see what they did.", 
+				"commands": []},
+				
+				{"lineString": "The bars are still intact but... What's that on the ground?", 
+				"commands": []},
+				
+				{"lineString": "It's shiny. Your eyes widen in anticipation. It better be a <color=#00ffffff>key</color>.", 
+				"commands": []}
+			],
+			
+			"choiceResult3":
+			[]
+		},
+
+		{
+			"choiceId": "exitChoice",
+			
+			"choiceOption1": "Exit",
+			
+			"choiceOption2": "Restart",
+			
+			"choiceOption3": null,
+			
+			
+			"choiceResult1":
+			[
+				{"lineString": "", 
+				"commands": ["quitGame"]}
+			],
+			
+			"choiceResult2":
+			[
+				{"lineString": "", 
+				"commands": ["restartGame"]}
+			],
+			
+			"choiceResult3":
+			[]
+		},
+
+		{
+			"choiceId": "startChoice",
+			
+			"choiceOption1": "Start",
+			
+			"choiceOption2": null,
+			
+			"choiceOption3": null,
+			
+			
+			"choiceResult1":
+			[
+				{"lineString": "...", 
+				"commands": ["startGame"]}
+			],
+			
+			"choiceResult2":
+			[],
+			
+			"choiceResult3":
+			[]
+		}
+	],
+
+"startingLines":
+	[
+		{"lineString": "Hello and thanks for playing <color=#00ffffff>Dungeon Escape</color>!", 
+		"commands": []},
+		{"lineString": "A word before we begin, I'd like to explain the controls real quick.", 
+		"commands": []},
+		{"lineString": "To move around the scene, type commands like <color=#00ffffff>move left</color> or <color=#00ffffff>go to door</color>.", 
+		"commands": []},
+		{"lineString": "I reccommend sticking to one-word commands like <color=#00ffffff>look, inspect, use</color> etc.", 
+		"commands": []},
+		{"lineString": "You can also type <color=#00ffffff>exit</color> at any point to quit the game.", 
+		"commands": []},
+		{"lineString": "That about wraps it up! When you're ready to begin, choose the <color=#00ffffff>start</color> option below to... well, start the game.", 
+		"commands": ["giveDialogueChoice startChoice"]}	
+	],
+
+"errorMessages":
+	[
+        "I don't understand.",
+        "I'm not sure what you're trying to say.",
+        "Those words make no sense to me.",
+        "What? I don't get it. What are you trying to say?",
+        "I'm not sure I follow. What are you trying to say?",
+        "Come again? Could you rephrase that?"
+	]
+}

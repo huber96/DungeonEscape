@@ -1,12 +1,11 @@
 # DungeonEscape
 
-![DungeonEscape](./ReadmeAssets/dungeonescape.png)
+![DungeonEscape](./ReadmeAssets/escape1.png)
 
 ## Info
 
 A short adventure/escape room type game I made to experiment with Json and adventure game elements. You move and interact with the environment by typing commands into the input field. The story is presented in a visual novel/text adventure type style accompanied with 3d visuals.
 
-![DungeonEscape](./ReadmeAssets/dungeonescape.png)
 
 ## Game overview
 
@@ -16,4 +15,4 @@ The player navigates the scene by typing in commands or pressing 'Enter' to cont
 
 ## Demo video
 
-[![link na video](./ReadmeAssets/platformer2.png)](https://www.youtube.com/watch?v=WRU8ttL_EV8&feature=youtu.be "Dungeon Escape demo")
+[![link na video](./ReadmeAssets/escape2.png)](https://www.youtube.com/watch?v=WRU8ttL_EV8&feature=youtu.be "Dungeon Escape demo")
